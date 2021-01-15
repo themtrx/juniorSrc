@@ -52,7 +52,7 @@ const Register: React.FC = () => {
                     name="email" 
                     id="email"
                     onChange={handleChange}/>
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password">Password: </label>
                 <input 
                     type="password" 
                     name="password" 
