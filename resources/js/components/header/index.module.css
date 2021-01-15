@@ -1,0 +1,26 @@
+.container {
+    max-width: 90%;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.nav-link {
+    margin-right: 10px;
+}
+
+.icons {
+    font-size: 3rem;
+}
+
+.icons:hover {
+    color: #6C63FF;
+}
+
+@media (max-width: 425px) {
+    .custom-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+}

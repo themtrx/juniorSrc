@@ -1,0 +1,30 @@
+.article {
+    margin-top: -120px;
+}
+.skill-wrap {
+    width: 55%;
+    margin: 0 auto;
+    padding: 50px 0;
+    border: 2px solid #D9D9D9;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.skill-wrap img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.skill-wrap h4, .skill-wrap h5{
+    font-weight: bold;
+}
+
+.skill-wrap h5 {
+    color: #6C63FF;
+}
+
+.skill-wrap p {
+    display: inline-block;
+    width: 50%;
+}

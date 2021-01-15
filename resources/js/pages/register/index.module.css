@@ -1,0 +1,10 @@
+.regForm {
+    margin: 100px auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.regForm button {
+    margin-top: 20px;
+}
