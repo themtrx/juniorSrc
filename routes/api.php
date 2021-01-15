@@ -24,7 +24,14 @@ use App\Models\User;
 //     return $users;
 // });
 
-Route::get('/users', function () {
-    $users = User::get();
+Route::post('/users', function ( Request $request ) {
+    $users = User::create([
+        'name' => $request['username'],
+        'email' => 'test1@mai1l.bg',
+        'password' => $request['password'],
+        'admin' => 0
+    ]);
+
+    
     return $users;
 });
