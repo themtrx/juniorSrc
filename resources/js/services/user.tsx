@@ -2,9 +2,9 @@ import axios from 'axios'
 
 export { regUser }
 
-const regUser = () => {
+const regUser = (data: object) => {
 
-    return axios.get('api/users')
+    return axios.post('api/users', data)
                 .then((req) => {
 
                     if(req.status === 200) {

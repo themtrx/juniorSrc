@@ -5,6 +5,7 @@ import { regUser } from '../../services/user'
 
 interface registerFormValues{
     username: string;
+    email: string;
     password: string;
     rePassword: string;
 }
@@ -13,6 +14,7 @@ const Register: React.FC = () => {
 
     const [formInputs, setFormInputs] = useState<registerFormValues>({
                                                         username: '',
+                                                        email: '',
                                                         password: '',
                                                         rePassword: ''
                                                     })
@@ -31,8 +33,8 @@ const Register: React.FC = () => {
 
     const submitRegister = (e: React.FormEvent<HTMLFormElement>):void => {
         e.preventDefault()
-
-        regUser().then((data) => console.log(data))
+        
+        regUser(formInputs).then((data) => console.log(data))
     }
 
     return (
@@ -45,6 +47,12 @@ const Register: React.FC = () => {
                     id="username"
                     onChange={handleChange}/>
                 <label htmlFor="password">Password:</label>
+                <label htmlFor="email">Email:</label>
+                <input 
+                    type="text" 
+                    name="email" 
+                    id="email"
+                    onChange={handleChange}/>
                 <input 
                     type="password" 
                     name="password" 
