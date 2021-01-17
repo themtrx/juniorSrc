@@ -4,14 +4,13 @@ export { regUser }
 
 const regUser = (data: object) => {
 
-    return axios.post('api/users', data)
+    return axios.post('api/register', data)
                 .then((req) => {
 
                     if(req.status === 200) {
                         return req.data
                     }
 
-                    return "Someting went wrong!"
                 })
                 .catch((err) => {
                     return err

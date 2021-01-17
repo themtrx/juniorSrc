@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\User;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +24,4 @@ use App\Models\User;
 //     return $users;
 // });
 
-Route::post('/users', function ( Request $request ) {
-    $users = User::create([
-        'name' => $request['username'],
-        'email' => 'test1@mai1l.bg',
-        'password' => $request['password'],
-        'admin' => 0
-    ]);
-
-    
-    return $users;
-});
+Route::post('/register', [ProfileController::class, 'registerProfile']);

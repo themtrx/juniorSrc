@@ -7,7 +7,7 @@ interface registerFormValues{
     username: string;
     email: string;
     password: string;
-    rePassword: string;
+    password_confirmation: string;
 }
 
 const Register: React.FC = () => {
@@ -16,14 +16,15 @@ const Register: React.FC = () => {
                                                         username: '',
                                                         email: '',
                                                         password: '',
-                                                        rePassword: ''
+                                                        password_confirmation: ''
                                                     })
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const target = e.target
         const name = target.name
         const value = target.value
-
+        
+        //Update every key in state object one by one without overwriting them
         let updateState = update(formInputs, {
             [name]: {$set: value}
         })
@@ -35,6 +36,7 @@ const Register: React.FC = () => {
         e.preventDefault()
         
         regUser(formInputs).then((data) => console.log(data))
+        
     }
 
     return (
@@ -58,10 +60,10 @@ const Register: React.FC = () => {
                     name="password" 
                     id="password"
                     onChange={handleChange}/>
-                <label htmlFor="rePassword">Repeat Password:</label>
+                <label htmlFor="rePassword">Confirm Password:</label>
                 <input 
                     type="password" 
-                    name="rePassword" 
+                    name="password_confirmation" 
                     id="rePassword"
                     onChange={handleChange}/>
                 <button type="submit">Register</button>
